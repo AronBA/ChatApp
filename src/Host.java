@@ -5,12 +5,12 @@ import java.io.*;
 public class Host
 {
     private MainGui g1;
-    private Socket          socket   = null;
-    private ServerSocket    server   = null;
-    private DataInputStream in       =  null;
+    private Socket socket = null;
+    private ServerSocket server = null;
+    private DataInputStream in =  null;
 
     // constructor with port
-    public Host(int port, MainGui g1)
+    public Host(int port)
     {
         // starts server and waits for a connection
         try
