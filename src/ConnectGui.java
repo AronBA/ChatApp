@@ -23,12 +23,14 @@ public class ConnectGui extends JFrame implements ActionListener {
         this.setLocationRelativeTo(null);
         connectButton.addActionListener(this);
         copyIp.addActionListener(this);
+
         try {
             System.out.println(Inet4Address.getLocalHost().getHostAddress());
             yourIp.setText(Inet4Address.getLocalHost().getHostAddress());
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+
         Dimension size = new Dimension(100, 30);
         inputIp.setPreferredSize(size);
         yourIp.setPreferredSize(size);
