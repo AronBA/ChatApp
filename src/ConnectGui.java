@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import java.net.Inet4Address;
 
 public class ConnectGui extends JFrame implements ActionListener {
-    private int ip;
+    private String ip;
     GridLayout gridLayout = new GridLayout(0, 1);
     Panel panel = new Panel();
     Panel theirPanel = new Panel();
@@ -25,7 +25,7 @@ public class ConnectGui extends JFrame implements ActionListener {
         copyIp.addActionListener(this);
         try {
             System.out.println(Inet4Address.getLocalHost().getHostAddress());
-            yourIp.setText("172.31.34.206");
+            yourIp.setText(Inet4Address.getLocalHost().getHostAddress());
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -44,14 +44,14 @@ public class ConnectGui extends JFrame implements ActionListener {
         this.setVisible(true);
     }
 
-    public int getIp() {
+    public String getIp() {
         return ip;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == connectButton) {
-            this.ip = (int) this.inputIp.getValue();
+            this.ip = (String) this.inputIp.getValue();
         }
         if (e.getSource() == copyIp) {
             String ownIp = yourIp.getText();
