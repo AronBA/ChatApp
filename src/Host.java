@@ -4,13 +4,13 @@ import java.io.*;
 
 public class Host
 {
-    //initialize socket and input stream
+    private MainGui g1;
     private Socket          socket   = null;
     private ServerSocket    server   = null;
     private DataInputStream in       =  null;
 
     // constructor with port
-    public Host(int port)
+    public Host(int port, MainGui g1)
     {
         // starts server and waits for a connection
         try
@@ -36,6 +36,7 @@ public class Host
                 {
                     line = in.readUTF();
                     System.out.println(line);
+                    g1.displaymessage(line);
 
                 }
                 catch(IOException i)
@@ -55,8 +56,5 @@ public class Host
         }
     }
 
-    public static void main(String args[])
-    {
-        Host host = new Host(5000);
-    }
+
 }
