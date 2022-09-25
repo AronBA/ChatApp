@@ -1,7 +1,2 @@
-# ChatApp
-nothing here
-aasda
-- asdasd
-asd-
-  asd-asd
-  asd-asdasd
+# ChatApp [WIP]
+a P2P ChatApp written in Java. 
